@@ -1,18 +1,28 @@
 "use client"
 import styles from "./components.module.css";
-export const Pagination=({page, setPage, startLimit, endLimit})=>{
-    const directSelection=(e)=>{
-        const p=Number(e.target.textContent);
+interface PaginationProps {
+    page: number;
+    setPage: (page: number) => void;
+    startLimit: number;
+    endLimit: number;
+  }
+  
+
+export const Pagination:React.FC<PaginationProps> = ({ page, setPage, startLimit, endLimit }) => {
+    const directSelection=(e: React.MouseEvent<HTMLButtonElement> | React.MouseEvent<HTMLParagraphElement>)=>{
+        const target = e.target as HTMLButtonElement;
+        const textContent = target.textContent;
+        const p=Number(textContent);
         if(p<18 && p>0)
             setPage(p);
     }
     const goToPrevPage=()=>{
         if(page>1)
-            setPage((prevPage)=>prevPage-1);
+            setPage(page-1);
     }
     const goToNextPage=()=>{
         if(page<=17)
-            setPage((prevPage)=>prevPage+1);
+            setPage(page+1);
     }
     return (
         <div className={styles.paginationDiv}>
