@@ -1,0 +1,219 @@
+.navDiv{
+    width: 100%;
+    height: 100px;
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: column;
+    padding: 8px;
+}
+.infoDiv{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    font-size: 0.75rem;
+    font-weight: 400;
+}
+.infoDiv p{
+    margin: 0px 10px 0px 10px;
+}
+.menuDiv{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+}
+.brandName{
+    font-size: 2rem;
+    font-weight: 700;
+}
+.menuList{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.menuList li{
+    margin: 0px 20px 0px 20px;
+    font-weight: 600;
+}
+.sideMenu{
+    display: flex;
+    margin-left: 40px;
+}
+.sideMenu span{
+    margin: 0px 20px 0px 20px;  
+}
+/* Announcement Componemt*/
+.announcementDiv{
+    width: 100%;
+    height: 36px;
+    background-color: #F4F4F4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.announcementDiv span{
+    font-weight: 500;
+    text-align: center;
+    font-size: 0.9rem;
+    padding: 5px 0px 5px 0px;
+    margin: 0px 30px 0px 30px;
+}
+/* Registration From Component */
+.registrationFormDiv, .emailVerifyFormDiv{
+    width: 45%;
+    max-width: 576px;
+    margin: 30px auto 30px auto;
+    border: 1px solid #C1C1C1;
+    border-radius: 20px;
+    padding: 30px 40px 30px 40px;
+}
+.registrationHeading, .emailVerifyHeading{
+    font-size: 2rem;
+    text-align: center;
+    font-weight: 600;
+}
+.formElement{
+    width: 100%;
+    height: 80px;
+    /* border: 1px solid red; */
+    margin: 0px 0px 20px 0px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    
+}
+.formElement label{
+    font-weight: 400;
+    color: #000000;
+    margin-bottom: 5px;
+}
+.formElement input{
+    width: 100%;
+    border: 1px solid #C1C1C1;
+    border-radius: 6px;
+    height: 48px;
+}
+.registerBtn, .emailVerifyBtn{
+    color: white;
+    width: 100%;
+    background-color: #000000;
+    height: 56px;
+    border-radius: 6px;
+    margin-top: 20px;
+}
+.loginRedirectDiv{
+    margin: 30px 0px 0px 0px;
+    text-align: center;
+}
+.loginRedirectDiv a{
+    font-weight: 500;
+}
+/* Email Verification Component */
+.infoPara{
+    margin-top: 15px;
+    text-align: center;
+    font-size: 1rem;
+}
+.infoPara span{
+    font-weight: 600;
+}
+.extraMargin{
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+.codeInputDiv{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    color: #000000;
+}
+.codeInputDiv input{
+    width:46px;
+    text-align: center;
+}
+
+/* Interest Card Component */
+.categoryFormElement{
+    width: 100%;
+    height: 20px;
+    /* border: 1px solid red; */
+    margin: 0px 0px 30px 0px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+    
+}
+.categoryFormElement label{
+    font-weight: 500;
+    font-size:1rem;
+    color: #000000;
+}
+.categoryFormElement input{
+    border: 1px solid #C1C1C1;
+    width: 24px;
+    border-radius: 4px;
+    height: 24px;
+    margin: 0px 10px 0px 20px; 
+    color: #000000;
+}
+.categoryFormElement input[type="checkbox"]:checked + span {
+    border-color: red;
+  background-color:red;
+}
+
+.categoryFormElement input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    font-size: 2rem;
+    padding: 0.1rem;
+    border: 1px solid black;
+    border-radius: 4px;
+  }
+
+  .categoryFormElement input[type="checkbox"]::before {
+    content: "";
+    width: 24px;
+    height: 24px;
+    clip-path: polygon(88% 27%, 90% 29%, 49% 80%, 23% 59%, 27% 54%, 48% 71%, 85% 25%);
+    transform: scale(0);
+    background-color: black;
+  }
+
+  .categoryFormElement input[type="checkbox"]:checked::before {
+    transform: scale(1.2) translate(-1px,-3px);
+  }
+  .categoryFormElement input[type="checkbox"]:hover {
+    color: black;
+  }
+/* Pagination Component */
+.paginationDiv{
+    display: flex;
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 250px;
+    justify-content: space-between;
+}
+.paginationDiv span{
+    font-size: 1rem;
+    opacity: 0.5;
+    cursor: pointer;
+}
+.paginationDiv p{
+    cursor: pointer;
+}
+.paginationDiv span:active{
+    opacity: 1;
+}
+.currPageSpan{
+    opacity: 1;
+}

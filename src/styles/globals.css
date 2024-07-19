@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+* input{
+    padding: 0px 10px 0px 10px;
+    font-size: 1.5rem;
+}
+.registrationFormDiv{
+    width: 45%;
+    max-width: 576px;
+    margin: 30px auto 30px auto;
+    border: 1px solid #C1C1C1;
+    border-radius: 20px;
+    padding: 30px 40px 30px 40px;
+}
+.registrationHeading{
+    font-size: 2rem;
+    text-align: center;
+    font-weight: 600;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.formElement{
+    width: 100%;
+    height: 80px;
+    /* border: 1px solid red; */
+    margin: 0px 0px 20px 0px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    
+}
+.formElement label{
+    font-weight: 400;
+    color: #000000;
+    margin-bottom: 5px;
+}
+.formElement input{
+    width: 100%;
+    border: 1px solid #C1C1C1;
+    border-radius: 6px;
+    height: 48px;
+}
+.registerBtn{
+    color: white;
+    width: 100%;
+    background-color: #000000;
+    height: 56px;
+    border-radius: 6px;
+    margin-top: 20px;
+}
+.loginRedirectDiv{
+    margin: 30px 0px 0px 0px;
+    text-align: center;
+}

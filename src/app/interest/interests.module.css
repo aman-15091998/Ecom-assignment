@@ -1,0 +1,27 @@
+.interestsFormDiv{
+    position: relative;
+    width: 45%;
+    max-width: 576px;
+    height: 553px;
+    margin: 30px auto 30px auto;
+    border: 1px solid #C1C1C1;
+    border-radius: 20px;
+    padding: 30px 40px 30px 40px;
+}
+.interestsHeading{
+    font-size: 2rem;
+    text-align: center;
+    font-weight: 600;
+}
+.interestsSubHeading{
+    font-size: 1rem;
+    text-align: center;
+    font-weight: 500;
+    margin: 15px 0px 10px 0px;
+}
+.savedInterestHeading{
+    text-align: start;
+    margin: 20px 0px 20px 20px;
+    font-weight: 500;
+    font-size: 1.3rem;
+}
