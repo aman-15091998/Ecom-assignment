@@ -1,9 +1,17 @@
 "use client"
 import { useAuth } from "~/context/AuthContext";
 import styles from "./components.module.css";
-export const InterestCard=({categories})=>{
+interface Cat {
+  name: string;
+}
+
+// Define the props for your component
+interface InterestCardProps {
+  categories: Cat[];
+}
+export const InterestCard: React.FC<InterestCardProps> = ({ categories })=>{
     const {user, loginUser}=useAuth();
-    const handleToggle=async (e)=>{
+    const handleToggle=async (e: React.ChangeEvent<HTMLInputElement>)=>{
         // update user state
         if(!user) return;
         const userCopy={...user};

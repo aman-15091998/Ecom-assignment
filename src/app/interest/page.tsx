@@ -7,12 +7,16 @@ import { api } from "~/trpc/react";
 import { Category } from "@prisma/client";
 import Login from "../login/page";
 import { Pagination } from "../_components/pagination";
+interface Cat {
+    name: string;
+}
+
 const Interest=()=>{
     const {user, logoutUser, loginUser} = useAuth();
     const [page, setPage]=useState(1);
     const getCategories=api.category.getCategories.useQuery({page:page }, {enabled:false});
     const updateUserPreferences=api.user.updateUserPreferences.useMutation();
-    const [categories, setCategories]=useState<Object | null>(null);
+    const [categories, setCategories]=useState<Cat[] | null>(null);
     useEffect(()=>{
         //getting page 
         async function setOrGetValues(){
