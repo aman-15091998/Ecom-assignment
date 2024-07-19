@@ -2,7 +2,7 @@
 import { Register } from "./_components/register";
 import { useAuth } from "~/context/AuthContext";
 import { EmailVerify } from "./_components/emailverification";
-import { Interests } from "./interest/page";
+import { Interest } from "./interest/page";
 
 export default function Home() {
   const {user, loginUser}=useAuth();
@@ -13,7 +13,7 @@ export default function Home() {
     }
     console.log(user);
     if(user)
-      return (<Interests/>); 
+      return (<Interest/>); 
     return (
       <Register/>
   );

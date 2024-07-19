@@ -6,7 +6,7 @@ import { useAuth } from "~/context/AuthContext";
 import { useState, useEffect } from "react";
 import { api } from "~/trpc/react";
 import { EmailVerify } from "../_components/emailverification";
-import { Interests } from "../interest/page";
+import { Interest } from "../interest/page";
 
 const Login=()=>{
     const {user, loginUser}=useAuth();
@@ -34,7 +34,7 @@ const Login=()=>{
         </>)
     }
     if(user)
-        return (<Interests/>); 
+        return (<Interest/>); 
     return (
         <div className={styles.loginFormDiv}>
             <h1 className={styles.loginHeading}>Login</h1>

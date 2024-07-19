@@ -1,18 +1,19 @@
 "use client"
 import { useAuth } from "~/context/AuthContext";
-import styles from "./interests.module.css";
+import styles from "./interest.module.css";
 import { InterestCard } from "../_components/interestcard";
 import { useEffect, useState } from "react";
 import { api } from "~/trpc/react";
 import { Category } from "@prisma/client";
 import Login from "../login/page";
 import { Pagination } from "../_components/pagination";
-export const Interests=()=>{
+const Interest=()=>{
     const {user, logoutUser, loginUser} = useAuth();
     const [page, setPage]=useState(1);
     const getCategories=api.category.getCategories.useQuery({page:page }, {enabled:false});
     const updateUserPreferences=api.user.updateUserPreferences.useMutation();
     const [categories, setCategories]=useState<Object | null>(null);
+    if(!user) return <Login/>;
     useEffect(()=>{
         //getting page 
         async function setOrGetValues(){
@@ -31,8 +32,6 @@ export const Interests=()=>{
         }
         updateUser();
     }, [user])
-   
-    if(!user) return <Login/>;
     
     return (
         <div className={styles.interestsFormDiv}>
@@ -45,3 +44,5 @@ export const Interests=()=>{
         </div>
     )
 }
+
+export default Interest;
