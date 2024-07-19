@@ -12,8 +12,8 @@ const transporter = nodemailer.createTransport({
 
 export const sendOTP=async (to: String, OTP: Number)=>{
     const info=await transporter.sendMail({
-        from:process.env.SMTP_HOST,
-        to:to,
+        from:process.env.SMTP_HOST as string,
+        to:to as string,
         text:`Your OTP for email verification is ${OTP}.`
     });
     console.log(info);
