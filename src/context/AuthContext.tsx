@@ -17,7 +17,8 @@ const useLocalStortage=(): [User | null, (user: User | null) => void]=>{
         }
     }, []);
     useEffect(()=>{
-        localStorage.setItem("user", JSON.stringify(user));
+        if(user)
+            localStorage.setItem("user", JSON.stringify(user));
     }, [user]);
     
     return [user, setUser];

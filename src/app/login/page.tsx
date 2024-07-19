@@ -6,7 +6,7 @@ import { useAuth } from "~/context/AuthContext";
 import { useState, useEffect } from "react";
 import { api } from "~/trpc/react";
 import { EmailVerify } from "../_components/emailverification";
-import { Interest } from "../interest/page";
+import Interest from "../interest/page";
 
 const Login=()=>{
     const {user, loginUser}=useAuth();

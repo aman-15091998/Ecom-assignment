@@ -2,7 +2,7 @@
     position: relative;
     width: 45%;
     max-width: 576px;
-    height: 553px;
+    height: auto;
     margin: 30px auto 30px auto;
     border: 1px solid #C1C1C1;
     border-radius: 20px;

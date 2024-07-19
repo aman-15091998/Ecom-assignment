@@ -197,7 +197,7 @@
 .paginationDiv{
     display: flex;
     position: absolute;
-    bottom: 5%;
+    bottom: 3%;
     left: 50%;
     transform: translateX(-50%);
     width: 250px;

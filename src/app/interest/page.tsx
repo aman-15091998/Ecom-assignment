@@ -13,7 +13,6 @@ const Interest=()=>{
     const getCategories=api.category.getCategories.useQuery({page:page }, {enabled:false});
     const updateUserPreferences=api.user.updateUserPreferences.useMutation();
     const [categories, setCategories]=useState<Object | null>(null);
-    if(!user) return <Login/>;
     useEffect(()=>{
         //getting page 
         async function setOrGetValues(){
@@ -32,7 +31,7 @@ const Interest=()=>{
         }
         updateUser();
     }, [user])
-    
+    if(!user) return <Login/>;
     return (
         <div className={styles.interestsFormDiv}>
             <span onClick={()=>{logoutUser()}}>Logout</span>

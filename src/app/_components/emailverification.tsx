@@ -54,18 +54,19 @@ export const EmailVerify=({email}: any)=>{
               }
         };
     }
-    const nextInput=(e, nextElementId)=> {
+    const nextInput=(e: React.ChangeEvent<HTMLInputElement>, nextElementId: string)=> {
         if (e.target.value.length >=1) {
             e.target.value=e.target.value.substring(e.target.value.length-1);
             document.getElementById(nextElementId)?.focus();
         }
     }
-    const prevInput=(e, prevElementId)=>{
-        if(e.target.value.length==0 && e.keyCode==8){
+    const prevInput=(e: React.KeyboardEvent<HTMLInputElement>, prevElementId:string)=>{
+        const target = e.target as HTMLInputElement;
+        if(target.value.length==0 && e.keyCode==8){
             document.getElementById(prevElementId)?.focus();
         }
     }
-    const preventExtraDigits=(e)=>{
+    const preventExtraDigits=(e: React.ChangeEvent<HTMLInputElement>)=>{
         e.target.value=e.target.value.substring(e.target.value.length-1);
     }
     return (
@@ -77,13 +78,13 @@ export const EmailVerify=({email}: any)=>{
                 <div className={`${styles.formElement} ${styles.extraMargin}`}>
                     <label>Code</label>
                     <div className={styles.codeInputDiv}>
-                        <input type="Number" min={0} max={9} id="input1" onChange={(e)=>{setOtp({...otp, one:e.target.value})}} onInput={(e)=>{nextInput(e, "input2")}} required></input>
-                        <input type="Number" min={0} max={9} id="input2" onChange={(e)=>{setOtp({...otp, two:e.target.value})}} onInput={(e)=>{nextInput(e, "input3")}} onKeyUpCapture={(e)=>{prevInput(e, "input1")}} required></input>
-                        <input type="Number" min={0} max={9} id="input3" onChange={(e)=>{setOtp({...otp, three:e.target.value})}} onInput={(e)=>{nextInput(e, "input4")}} onKeyUpCapture={(e)=>{prevInput(e, "input2")}} required></input>
-                        <input type="Number" min={0} max={9} id="input4" onChange={(e)=>{setOtp({...otp, four:e.target.value})}} onInput={(e)=>{nextInput(e, "input5")}} onKeyUpCapture={(e)=>{prevInput(e, "input3")}} required></input>
-                        <input type="Number" min={0} max={9} id="input5" onChange={(e)=>{setOtp({...otp, five:e.target.value})}} onInput={(e)=>{nextInput(e, "input6")}} onKeyUpCapture={(e)=>{prevInput(e, "input4")}} required></input>
-                        <input type="Number" min={0} max={9} id="input6" onChange={(e)=>{setOtp({...otp, six:e.target.value})}} onInput={(e)=>{nextInput(e, "input7")}} onKeyUpCapture={(e)=>{prevInput(e, "input5")}} required></input>
-                        <input type="Number" min={0} max={9} id="input7" onChange={(e)=>{setOtp({...otp, seven:e.target.value})}} onInput={(e)=>{nextInput(e, "input8")}} onKeyUpCapture={(e)=>{prevInput(e, "input6")}} required></input>
+                        <input type="Number" min={0} max={9} id="input1" onChange={(e)=>{setOtp({...otp, one:e.target.value})}} onInput={(e: React.ChangeEvent<HTMLInputElement>)=>{nextInput(e, "input2")}} required></input>
+                        <input type="Number" min={0} max={9} id="input2" onChange={(e)=>{setOtp({...otp, two:e.target.value})}} onInput={(e: React.ChangeEvent<HTMLInputElement>)=>{nextInput(e, "input3")}} onKeyUpCapture={(e)=>{prevInput(e, "input1")}} required></input>
+                        <input type="Number" min={0} max={9} id="input3" onChange={(e)=>{setOtp({...otp, three:e.target.value})}} onInput={(e: React.ChangeEvent<HTMLInputElement>)=>{nextInput(e, "input4")}} onKeyUpCapture={(e)=>{prevInput(e, "input2")}} required></input>
+                        <input type="Number" min={0} max={9} id="input4" onChange={(e)=>{setOtp({...otp, four:e.target.value})}} onInput={(e: React.ChangeEvent<HTMLInputElement>)=>{nextInput(e, "input5")}} onKeyUpCapture={(e)=>{prevInput(e, "input3")}} required></input>
+                        <input type="Number" min={0} max={9} id="input5" onChange={(e)=>{setOtp({...otp, five:e.target.value})}} onInput={(e: React.ChangeEvent<HTMLInputElement>)=>{nextInput(e, "input6")}} onKeyUpCapture={(e)=>{prevInput(e, "input4")}} required></input>
+                        <input type="Number" min={0} max={9} id="input6" onChange={(e)=>{setOtp({...otp, six:e.target.value})}} onInput={(e: React.ChangeEvent<HTMLInputElement>)=>{nextInput(e, "input7")}} onKeyUpCapture={(e)=>{prevInput(e, "input5")}} required></input>
+                        <input type="Number" min={0} max={9} id="input7" onChange={(e)=>{setOtp({...otp, seven:e.target.value})}} onInput={(e: React.ChangeEvent<HTMLInputElement>)=>{nextInput(e, "input8")}} onKeyUpCapture={(e)=>{prevInput(e, "input6")}} required></input>
                         <input type="Number" min={0} max={9} id="input8" onChange={(e)=>{setOtp({...otp, eight:e.target.value})}} onInput={preventExtraDigits} onKeyUpCapture={(e)=>{prevInput(e, "input7")}}  required></input>
                     </div>
                 </div>
