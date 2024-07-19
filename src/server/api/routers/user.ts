@@ -72,7 +72,7 @@ export const userRouter = createTRPCRouter({
     });
     return updatedUser;
   }),
-  // Update a user by ID
+  
   updateUserPreferences: publicProcedure
     .input(
       z.object({
@@ -101,7 +101,7 @@ export const userRouter = createTRPCRouter({
         data: { verifyCode: otp },
       });
       sendOTP(input.email, otp);
-      return { success: true}; // You may choose not to return the OTP in production for security reasons
+      return { success: true}; 
     }),
 });
 export const categoryRouter= createTRPCRouter({
