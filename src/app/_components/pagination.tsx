@@ -9,6 +9,7 @@ interface PaginationProps {
   
 
 export const Pagination:React.FC<PaginationProps> = ({ page, setPage, startLimit, endLimit }) => {
+    //going to the page on click event
     const directSelection=(e: React.MouseEvent<HTMLButtonElement> | React.MouseEvent<HTMLParagraphElement>)=>{
         const target = e.target as HTMLButtonElement;
         const textContent = target.textContent;
@@ -16,10 +17,12 @@ export const Pagination:React.FC<PaginationProps> = ({ page, setPage, startLimit
         if(p<18 && p>0)
             setPage(p);
     }
+    
     const goToPrevPage=()=>{
         if(page>1)
             setPage(page-1);
     }
+    
     const goToNextPage=()=>{
         if(page<=17)
             setPage(page+1);
@@ -36,7 +39,7 @@ export const Pagination:React.FC<PaginationProps> = ({ page, setPage, startLimit
                 {((page+2)<=endLimit && page>=startLimit)?(<span className={`${styles.pageSpan}`} onClick={directSelection}>{page+2}</span>):""}
                 {((page+3)<=endLimit && page>=startLimit)?(<span className={`${styles.pageSpan}`} onClick={directSelection}>{page+3}</span>):""}
                 <span className={styles.nextPage} onClick={goToNextPage} ><i className="fa-solid fa-chevron-right"></i></span>
-                <span className={styles.lastPage} onClick={()=>{setPage(17)}}><i className="fa-solid fa-angles-right"></i></span>
+                <span className={styles.lastPage} onClick={()=>{setPage(endLimit)}}><i className="fa-solid fa-angles-right"></i></span>
             </div>
     )
 }

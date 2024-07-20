@@ -20,7 +20,6 @@ export const EmailVerify=({email}: any)=>{
 
     const generateOtp = api.user.generateOtp.useMutation();
     useEffect(()=>{
-        console.log("useEffect");
         const setOTPAndSend = async (email: string) => {
             try {
               await generateOtp.mutateAsync({ email });
@@ -54,12 +53,14 @@ export const EmailVerify=({email}: any)=>{
               }
         };
     }
+    // on input going to next input
     const nextInput=(e: React.ChangeEvent<HTMLInputElement>, nextElementId: string)=> {
         if (e.target.value.length >=1) {
             e.target.value=e.target.value.substring(e.target.value.length-1);
             document.getElementById(nextElementId)?.focus();
         }
     }
+    // on backspace going to previous input
     const prevInput=(e: React.KeyboardEvent<HTMLInputElement>, prevElementId:string)=>{
         const target = e.target as HTMLInputElement;
         if(target.value.length==0 && e.keyCode==8){
@@ -69,11 +70,18 @@ export const EmailVerify=({email}: any)=>{
     const preventExtraDigits=(e: React.ChangeEvent<HTMLInputElement>)=>{
         e.target.value=e.target.value.substring(e.target.value.length-1);
     }
+    const maskEmail=()=>{
+        const arr=email.split("@");
+        let emailLen=arr[0].length;
+        console.log(arr);
+        let masked=arr[0].substring(0, emailLen-3)+"***"+"@gmail.com";
+        return masked;
+    }
     return (
         <div className={styles.emailVerifyFormDiv}>
             <h1 className={styles.emailVerifyHeading}>Verify your email</h1>
             <p className={styles.infoPara}>Enter the 8 digit code you have received on 
-            <br></br><span>{email}</span></p>
+            <br></br><span>{maskEmail()}</span></p>
             <form onSubmit={otpHandler}>
                 <div className={`${styles.formElement} ${styles.extraMargin}`}>
                     <label>Code</label>

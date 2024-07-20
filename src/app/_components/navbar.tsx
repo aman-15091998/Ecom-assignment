@@ -22,7 +22,6 @@ export const Navbar=()=>{
                     <span className={styles.cartIcon}><i className="fa-solid fa-cart-shopping"></i></span>
                 </div>
             </div>
-            {/* <h1>Navbar</h1> */}
         </div>
     )
 }

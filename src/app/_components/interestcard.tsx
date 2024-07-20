@@ -12,7 +12,7 @@ interface InterestCardProps {
 export const InterestCard: React.FC<InterestCardProps> = ({ categories })=>{
     const {user, loginUser}=useAuth();
     const handleToggle=async (e: React.ChangeEvent<HTMLInputElement>)=>{
-        // update user state
+    //    updating the user preference
         if(!user) return;
         const userCopy={...user};
         const prefIndex=userCopy.preferences?.indexOf(e.target.value);

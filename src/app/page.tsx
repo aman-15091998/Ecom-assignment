@@ -11,7 +11,6 @@ export default function Home() {
     <EmailVerify email={user.email}/>
     </>)
     }
-    console.log(user);
     if(user)
       return (<Interest/>); 
     return (

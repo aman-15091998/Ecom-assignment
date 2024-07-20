@@ -52,7 +52,7 @@ const Login=()=>{
                 <button className={styles.loginBtn} disabled={isFetching}>{isFetching?"LOGGING IN...":"LOGIN"}</button>
             </form>
             <div className={styles.registerRedirectDiv}>
-                <p>Didn't have an account? <Link href="/">SIGN UP</Link></p>
+                <p>Didn't have an account?{isFetching?"SIGN UP":<Link href="/">SIGN UP</Link>}</p>
             </div>
         </div>
     )

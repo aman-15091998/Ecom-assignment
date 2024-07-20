@@ -5,7 +5,6 @@ import styles from "./components.module.css";
 import { useAuth } from "~/context/AuthContext";
 import { useState } from "react";
 import { api } from "~/trpc/react";
-import { User } from "@prisma/client";
 
 
 export const Register=()=>{
@@ -50,7 +49,7 @@ export const Register=()=>{
                 <button className={styles.registerBtn} disabled={isPending}>{isPending?"CREATING...":"CREATE ACCOUNT"}</button>
             </form>
             <div className={styles.loginRedirectDiv}>
-                <p>Have an account? <Link href="/login">LOGIN</Link></p>
+                <p>Have an account? {isPending?"LOGIN":<Link href="/login">LOGIN</Link>}</p>
             </div>
         </div>
     )

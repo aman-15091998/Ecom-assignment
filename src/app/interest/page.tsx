@@ -4,7 +4,6 @@ import styles from "./interest.module.css";
 import { InterestCard } from "../_components/interestcard";
 import { useEffect, useState } from "react";
 import { api } from "~/trpc/react";
-import { Category } from "@prisma/client";
 import Login from "../login/page";
 import { Pagination } from "../_components/pagination";
 interface Cat {
@@ -18,7 +17,7 @@ const Interest=()=>{
     const updateUserPreferences=api.user.updateUserPreferences.useMutation();
     const [categories, setCategories]=useState<Cat[] | null>(null);
     useEffect(()=>{
-        //getting page 
+        //getting page data
         async function setOrGetValues(){
             const res=await getCategories.refetch();
             if(!res.data) return;
