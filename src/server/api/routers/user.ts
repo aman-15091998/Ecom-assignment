@@ -100,7 +100,7 @@ export const userRouter = createTRPCRouter({
         where: { email: input.email },
         data: { verifyCode: otp },
       });
-      sendOTP(input.email, otp);
+      await sendOTP(input.email, otp);
       return { success: true}; 
     }),
 });
