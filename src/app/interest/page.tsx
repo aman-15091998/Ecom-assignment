@@ -41,7 +41,7 @@ const Interest=()=>{
             <h1 className={styles.interestsHeading}>Please mark your interests!</h1>
             <h3 className={styles.interestsSubHeading}>We will keep you notified.</h3>
             <p className={styles.savedInterestHeading}>My saved interests!</p>
-            <InterestCard categories={categories || []}/>
+            {getCategories.isFetching?<h3 className={styles.loading}>Loading...</h3>:<InterestCard categories={categories || []}/>}
             <Pagination page={page} setPage={setPage} startLimit={1} endLimit={17}/>
         </div>
     )
